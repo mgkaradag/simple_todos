@@ -1,0 +1,29 @@
+
+<template name="task">
+    <li class="{{#if checked}} checked {{/if}}"> <!-- set the CSS for a checked task -->
+        <input type="checkbox" checked="{{checked}}">
+        {{#if isOwner}}
+            <button class="toggle-private">
+                {{#if private}}
+                    Private
+                {{else}}
+                    Public
+                {{/if}}
+            </button>
+        {{/if}}
+
+        <span class="text">{{text}}</span>
+        <span class="createdBy">
+            {{#if createdBy}}
+                by  {{createdBy}}
+            {{else}}
+                by  anonymous user
+            {{/if}}
+        </span>
+
+
+        <a class="js-delete-task" id="deletetask" href="#" >
+            <i class="fa fa-trash-o pull-right" aria-hidden="true"></i>
+        </a>
+    </li>
+</template>

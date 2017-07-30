@@ -1,0 +1,30 @@
+
+
+<body>
+  <div class="container">
+      <header>
+          <form class="form-inline">
+              <div>
+                  <h1> To-Do List <span class="taskcount">  - {{taskCount}}</span></h1>
+              </div>
+              <div>
+                  <label>
+                      <input class="hide-completed" id="checkbox1" type="checkbox"><span class="light-text">   Hide Completed Tasks</span>
+                  </label>
+              </div>
+          </form>
+          <div class="login">
+              {{>loginButtons}}
+          </div>
+          <form class="new-task">
+              <input type="text" name="text" id="newtask" placeholder="{{placeHolder}}">
+          </form>
+      </header>
+
+    <ul>
+      {{#each tasks}}
+        {{>task}}
+      {{/each}}
+    </ul>
+  </div>
+</body>
